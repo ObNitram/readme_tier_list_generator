@@ -1,0 +1,15 @@
+S:
+  color: "#ff0000"
+  rankable: [ Dart, C#, Zig, C ]
+
+A:
+  color: "#ff8000"
+  rankable: [ Cpp, Java, Rust ]
+
+B:
+  color: "#ffff00"
+  rankable: [ TS ]
+
+F:
+  color: "#00ff00"
+  rankable: [ JS, Python, HTML, CSS ]
