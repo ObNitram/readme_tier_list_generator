@@ -17,8 +17,7 @@ jobs:
 
     - name: Run a command
       run: |
-        echo "Exécutez votre commande ici"
-        # Remplacez la ligne ci-dessus par votre commande qui génère le fichier
+        ./build/linux/x64/release/bundle/listgenerator 
 
     - name: Commit and Push
       run: |
