@@ -1,0 +1,12 @@
+/home/obnitram/Documents/Projects/Flutter/readme_tier_list_generator/build/linux/x64/release/bundle/readme_tier_list_generator
+/home/obnitram/Documents/Projects/Flutter/readme_tier_list_generator/build/linux/x64/release/bundle/data/icudtl.dat
+/home/obnitram/Documents/Projects/Flutter/readme_tier_list_generator/build/linux/x64/release/bundle/lib/libflutter_linux_gtk.so
+/home/obnitram/Documents/Projects/Flutter/readme_tier_list_generator/build/linux/x64/release/bundle/data/flutter_assets/AssetManifest.bin
+/home/obnitram/Documents/Projects/Flutter/readme_tier_list_generator/build/linux/x64/release/bundle/data/flutter_assets/shaders/ink_sparkle.frag
+/home/obnitram/Documents/Projects/Flutter/readme_tier_list_generator/build/linux/x64/release/bundle/data/flutter_assets/AssetManifest.json
+/home/obnitram/Documents/Projects/Flutter/readme_tier_list_generator/build/linux/x64/release/bundle/data/flutter_assets/version.json
+/home/obnitram/Documents/Projects/Flutter/readme_tier_list_generator/build/linux/x64/release/bundle/data/flutter_assets/FontManifest.json
+/home/obnitram/Documents/Projects/Flutter/readme_tier_list_generator/build/linux/x64/release/bundle/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+/home/obnitram/Documents/Projects/Flutter/readme_tier_list_generator/build/linux/x64/release/bundle/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+/home/obnitram/Documents/Projects/Flutter/readme_tier_list_generator/build/linux/x64/release/bundle/data/flutter_assets/NOTICES.Z
+/home/obnitram/Documents/Projects/Flutter/readme_tier_list_generator/build/linux/x64/release/bundle/lib/libapp.so
