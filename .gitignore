@@ -30,6 +30,10 @@ migrate_working_dir/
 .packages
 .pub-cache/
 .pub/
+/build/lib
+/build/flutter_assets
+/build/d6bc2bdfa98b32c2f9931ce64d3ea398
+/build/linux/x64/debug
 
 # Symbolication related
 app.*.symbols
