@@ -14,7 +14,7 @@ void main() async {
     yamlConfig =
         await File("${Directory.current.path}/tier_list.yaml").readAsString();
   } catch (e) {
-    QuickLog.e(e.toString());
+    QuickLog.e("tier_list.yaml not found", stackTrace: e.toString());
   }
 
   runApp(MyApp(tierList: parseYaml(yamlConfig)));
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //WidgetsBinding.instance.addPostFrameCallback((_) => captureImage(context));
+    WidgetsBinding.instance.addPostFrameCallback((_) => captureImage(context));
 
     BorderRadiusGeometry radius = BorderRadius.circular(15.0);
 
@@ -78,6 +78,8 @@ class MyApp extends StatelessWidget {
 
     String imagePath = "${Directory.current.path}/captured_image.png";
 
+    QuickLog.i("imagePath: $imagePath");
+
     File imgFile = File(imagePath);
 
     await imgFile.writeAsBytes(pngBytes);
@@ -87,9 +89,13 @@ class MyApp extends StatelessWidget {
 
   Future<Uint8List?> capture() async {
     try {
+      QuickLog.v("Try");
+
       /// boundary widget by GlobalKey
       RenderRepaintBoundary? boundary = _globalKey.currentContext
           ?.findRenderObject() as RenderRepaintBoundary?;
+
+      QuickLog.ensure(boundary != null, "boundary is null");
 
       /// convert boundary to image
       final image = await boundary!.toImage(pixelRatio: 6);
@@ -99,8 +105,8 @@ class MyApp extends StatelessWidget {
       final pngBytes = byteData?.buffer.asUint8List();
       return pngBytes;
     } catch (e) {
-      QuickLog.e(e.toString());
-      return null;
+      QuickLog.e("Error", stackTrace: e.toString());
+      return Uint8List(0);
     }
   }
 }

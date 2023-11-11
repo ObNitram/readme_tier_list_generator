@@ -96,7 +96,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "71f1ba4a6195f824f0a4fe2fb532d31f5d248d4e"
+      resolved-ref: bd9bea2636afb524ec6ef67dcec595deec54a2e2
       url: "https://github.com/ObNitram/log_tanker.git"
     source: git
     version: "0.0.1"
