@@ -1,0 +1,29 @@
+name: Linux Command Execution and Commit File
+
+on:
+  push:
+    branches:
+    - main
+
+  workflow_dispatch:
+  
+
+jobs:
+  run-command:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Run a command
+      run: |
+        echo "Exécutez votre commande ici"
+        # Remplacez la ligne ci-dessus par votre commande qui génère le fichier
+
+    - name: Commit and Push
+      run: |
+        # git config --global user.name 'VotreNom'
+        # git config --global user.email 'votreemail@example.com'
+        git add .
+        git commit -m "Ajout du fichier généré"
+        git push
