@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4.*
+      uses: actions/checkout@v4.1.1
 
     - name: Run a command
       run: |
@@ -22,7 +22,7 @@ jobs:
 
     - name: Commit and Push
       run: |
-        # git config --global user.name 'VotreNom'
+        git config user.name 'VotreNom'
         # git config --global user.email 'votreemail@example.com'
         git add .
         git commit -m "Ajout du fichier généré"
