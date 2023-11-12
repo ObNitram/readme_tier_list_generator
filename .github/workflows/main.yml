@@ -17,7 +17,8 @@ jobs:
 
     - name: Run a command
       run: |
-        ./build/linux/x64/release/bundle/listgenerator 
+        Xvfb :1 & export DISPLAY=:1; ./build/linux/x64/release/bundle/readme_tier_list_generator
+
 
     - name: Commit and Push
       run: |
