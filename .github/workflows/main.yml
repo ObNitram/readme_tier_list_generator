@@ -25,6 +25,9 @@ jobs:
     - name: ls
       run: ls *.png -l -h
 
+    - name: Get git info
+      run: git remote -v
+
 
     # - name: Commit and Push
     #   run: |
