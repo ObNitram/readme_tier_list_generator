@@ -15,6 +15,9 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4.1.1
 
+    - name: Install dependencies
+      run: sudo apt-get install libegl1-mesa
+
     - name: Run a command
       run: |
         Xvfb :1 & export DISPLAY=:1; ./build/linux/x64/release/bundle/readme_tier_list_generator
