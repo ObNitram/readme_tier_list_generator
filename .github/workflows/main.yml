@@ -1,6 +1,10 @@
 name: Linux Command Execution and Commit File
 
 on:
+  push:
+    branches:
+    - main
+
   workflow_dispatch:
 
 jobs:
