@@ -35,6 +35,11 @@ jobs:
         git config user.email 'automation@example.com'
         git add .
         git commit -m "Ajout du fichier généré"
+        
+    - name: Set up Git repository
+      run: |
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/ObNitram/readme_tier_list_generator.git
+
 
     - name: Push 
       run: |
