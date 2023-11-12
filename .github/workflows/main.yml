@@ -35,4 +35,9 @@ jobs:
         git config user.email 'automation@example.com'
         git add .
         git commit -m "Ajout du fichier généré"
+
+    - name: Push 
+      run: |
         git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
