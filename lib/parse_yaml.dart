@@ -1,18 +1,31 @@
+import "package:log_tanker/log_tanker.dart";
 import "package:readme_tier_list_generator/model.dart";
 import "package:yaml/yaml.dart";
 
-Map<Rank, List<Rankable>> parseYaml(String yamlString) {
-  final yamlMap = loadYaml(yamlString);
-  final Map<Rank, List<Rankable>> tierList = {};
+TierList parseYaml(String yamlString) {
+  final yamlMap = loadYaml(yamlString.trim());
 
-  for (String rank in yamlMap.keys) {
-    List<Rankable> rankableList = [];
+  if (yamlMap == null) {
+    QuickLog.e("No yaml string not loadable to yaml map, exiting");
+    return TierList.defaultTierList();
+  }
 
-    for (final rankable in yamlMap[rank]["rankable"]) {
-      rankableList.add(Rankable(name: rankable));
+  QuickLog.d("yamlMap: $yamlMap");
+
+  final Map<Tier, List<RankableItem>> tierList = {};
+
+  for (String key in yamlMap.keys) {
+    List<RankableItem> rankableList = [];
+
+    if (key == "title") {
+      continue;
     }
 
-    tierList[Rank(name: rank, colorHex: yamlMap[rank]["color"])] = rankableList;
+    for (final rankable in yamlMap[key]["rankable"]) {
+      rankableList.add(RankableItem(name: rankable));
+    }
+
+    tierList[Tier(name: key, colorHex: yamlMap[key]["color"])] = rankableList;
   }
-  return tierList;
+  return TierList(title: yamlMap["title"], tierList: tierList);
 }

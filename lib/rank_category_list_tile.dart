@@ -2,8 +2,8 @@ import "package:flutter/material.dart";
 import "package:readme_tier_list_generator/model.dart";
 
 class RankCategoryListTile extends StatelessWidget {
-  final List<Rankable> rankable;
-  final Rank rank;
+  final List<RankableItem> rankable;
+  final Tier rank;
 
   const RankCategoryListTile(
       {required this.rank, required this.rankable, super.key});

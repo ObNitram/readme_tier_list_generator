@@ -1,10 +1,19 @@
 import "package:flutter/material.dart";
 
-class Rank {
+class TierList {
+  final String title;
+  final Map<Tier, List<RankableItem>> tierList;
+
+  TierList({required this.title, required this.tierList});
+
+  TierList.defaultTierList() : this(title: "", tierList: {});
+}
+
+class Tier {
   final String name;
   final Color color;
 
-  Rank({required this.name, String? colorHex}) : color = _parseColor(colorHex);
+  Tier({required this.name, String? colorHex}) : color = _parseColor(colorHex);
 
   // Helper function to parse the color string and return a Color
   static Color _parseColor(String? colorHex) {
@@ -21,8 +30,8 @@ class Rank {
   }
 }
 
-class Rankable {
+class RankableItem {
   final String name;
 
-  Rankable({required this.name});
+  RankableItem({required this.name});
 }
