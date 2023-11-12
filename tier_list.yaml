@@ -1,6 +1,6 @@
 S:
   color: "#ff0000"
-  rankable: [ Dart, C#, Zig, C ]
+  rankable: [ Dart, Flutter, C#, Zig, C ]
 
 A:
   color: "#ff8000"
