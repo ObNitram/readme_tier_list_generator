@@ -51,8 +51,10 @@ class ImageGenerator extends StatelessWidget {
       ),
     );
 
-    WidgetsBinding.instance
-        .addPostFrameCallback((_) => postFrameCallBack(context));
+    WidgetsBinding.instance.addPostFrameCallback((_) => Future.delayed(
+          const Duration(seconds: 1),
+          () => postFrameCallBack(context),
+        ));
 
     return MaterialApp(
       home: Container(color: Colors.purpleAccent, child: repaint),
