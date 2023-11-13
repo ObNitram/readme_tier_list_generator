@@ -21,11 +21,19 @@ samples, guidance on mobile development, and a full API reference.
 title: "Languages Tier-List"
 S:
   color: "#ff0000"
-  rankable: [ Dart, Flutter, C#, Zig, C ]
+  rankable:
+    - Dart
+    - CSharp
+    - Zig
+    - C
 
 A:
   color: "#ff8000"
-  rankable: [ Cpp, Java, Rust ]
+  rankable:
+    - C++
+    - Java
+    - Rust
+    - Go
 
 B:
   color: "#ffff00"
@@ -33,6 +41,6 @@ B:
 
 F:
   color: "#00ff00"
-  rankable: [ JS, Python, HTML, CSS ]
+  rankable: [ JS, html, css, python ]
 -->
 
