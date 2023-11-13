@@ -16,7 +16,9 @@ class TierList {
   TierList.defaultTierList() : this(title: "", tierList: {}, yamlConfig: "");
 
   String get imageName =>
-      "${title.trim().replaceAllMapped(RegExp(r"\W+"), (match) => "_").toLowerCase()}.png";
+      "${title.trim()
+          .replaceAllMapped(RegExp(r"\W+"), (match) => "_")
+          .toLowerCase()}.png";
 }
 
 class Tier {
@@ -45,7 +47,12 @@ class RankableItem {
     if (name.startsWith("icons/")) {
       File imageFile = File("${Directory.current.path}/assets/$name");
       if (imageFile.existsSync()) {
-        return SvgPicture.string(imageFile.readAsStringSync());
+        return SvgPicture.string(
+            imageFile.readAsStringSync(),
+            placeholderBuilder: (context) => const Text("Icon loading"),
+            height: 90,
+            width: 90,
+        );
       } else {
         QuickLog.w("Image file not found in : \n ${imageFile.path}");
         return Text(name);
@@ -54,7 +61,8 @@ class RankableItem {
 
     if (customIconAssociation.containsKey(name.trim().toLowerCase())) {
       File imageFile = File(
-          "${Directory.current.path}/assets/${customIconAssociation[name.trim().toLowerCase()]}");
+          "${Directory.current.path}/assets/${customIconAssociation[name.trim()
+              .toLowerCase()]}");
       if (imageFile.existsSync()) {
         return SvgPicture.string(imageFile.readAsStringSync());
       } else {
