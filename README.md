@@ -27,14 +27,13 @@ S:
     - CSharp
     - Zig
     - C
+    - bash
 
 A:
   color: "#ff8000"
   rankable:
     - C++
     - Java
-    - Rust
-    - Go
 
 B:
   color: "#ffff00"
