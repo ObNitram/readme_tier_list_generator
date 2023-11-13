@@ -19,35 +19,39 @@ class ImageGenerator extends StatelessWidget {
     BorderRadiusGeometry radius = BorderRadius.circular(15.0);
     final Widget repaint = RepaintBoundary(
       key: _globalKey,
-      child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: radius,
-        ),
-        color: Colors.grey[200],
-        child: ClipRRect(
+      child: SizedBox(
+        width: 800,
+        height: 500,
+        child: Card(
+          shape: RoundedRectangleBorder(
             borderRadius: radius,
-            child: Column(
-              children: [
-                Container(
-                  color: Colors.blue,
-                  height: 80,
-                  child: const Center(
-                      child: Text("Language Tier List",
-                          style: TextStyle(fontSize: 30, color: Colors.white))),
-                ),
-                const Divider(
-                  height: 1,
-                  thickness: 1,
-                ),
-                for (Tier rank in tierList.tierList.keys)
-                  Expanded(
-                    child: RankCategoryListTile(
-                      rankable: tierList.tierList[rank]!,
-                      rank: rank,
-                    ),
+          ),
+          color: Colors.grey[200],
+          child: ClipRRect(
+              borderRadius: radius,
+              child: Column(
+                children: [
+                  Container(
+                    color: Colors.blue,
+                    height: 80,
+                    child: const Center(
+                        child: Text("Language Tier List",
+                            style: TextStyle(fontSize: 30, color: Colors.white))),
                   ),
-              ],
-            )),
+                  const Divider(
+                    height: 1,
+                    thickness: 1,
+                  ),
+                  for (Tier rank in tierList.tierList.keys)
+                    Expanded(
+                      child: RankCategoryListTile(
+                        rankable: tierList.tierList[rank]!,
+                        rank: rank,
+                      ),
+                    ),
+                ],
+              )),
+        ),
       ),
     );
 
@@ -80,7 +84,7 @@ class ImageGenerator extends StatelessWidget {
 
       QuickLog.ensure(boundary != null, "boundary is null");
 
-      final image = await boundary!.toImage(pixelRatio: 6);
+      final image = await boundary!.toImage(pixelRatio: 1);
 
       final byteData =
           await image.toByteData(format: ui.ImageByteFormat.png) as ByteData;
