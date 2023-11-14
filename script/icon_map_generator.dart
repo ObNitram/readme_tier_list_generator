@@ -36,7 +36,7 @@ Future<Map<String, String>> listFilesInDirectory(String directoryPath) async {
   return filesMap;
 }
 
-final Map<String, List<String>> customRemap = {
+final Map<String, List<String>> customKeyRemap = {
   "amazonwebservices": ["aws"],
   "css3": ["css"],
   "html5": ["html"],
@@ -46,6 +46,10 @@ final Map<String, List<String>> customRemap = {
   "csharp": ["c#"],
 };
 
+final Map<String, String> customIconRemap = {
+  "zig": "icons/zig/zig-original.svg",
+};
+
 void main() async {
   String directoryPath = "${Directory.current.path}/assets";
   Map<String, String> rawAssociation =
@@ -53,13 +57,15 @@ void main() async {
 
   String output = "final Map<String, String> customIconAssociation = {";
 
+  rawAssociation.addAll(customIconRemap);
+
   rawAssociation.forEach((name, path) {
     QuickLog.v("$name: $path");
     output += '"$name": "$path",\n';
   });
 
   output += "// Manually remapped icons\n";
-  customRemap.forEach((name, secondaryNames) {
+  customKeyRemap.forEach((name, secondaryNames) {
     for (var secondaryName in secondaryNames) {
       output += '"$secondaryName": "${rawAssociation[name]}",\n';
     }

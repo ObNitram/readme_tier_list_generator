@@ -18,7 +18,6 @@ samples, guidance on mobile development, and a full API reference.
 
 [![Languages Tier-List](/gen_images/languages_tier_list.png)](https://github.com/ObNitram/readme_tier_list_generator)
 <!--tier-list
- 
 title: "Languages Tier-List"
 S:
   color: "#ff0000"

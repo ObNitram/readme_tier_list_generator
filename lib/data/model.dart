@@ -2,13 +2,15 @@ import "dart:io";
 
 import "package:flutter/material.dart";
 import "package:log_tanker/log_tanker.dart";
-import 'package:flutter_svg/flutter_svg.dart';
+import "package:flutter_svg/flutter_svg.dart";
+import "package:readme_tier_list_generator/data/style.dart";
 import "package:readme_tier_list_generator/gen/icons.dart";
 
 class TierList {
   final String title;
   final Map<Tier, List<RankableItem>> tierList;
   final String yamlConfig;
+  final Style style = Style();
 
   TierList(
       {required this.title, required this.tierList, required this.yamlConfig});

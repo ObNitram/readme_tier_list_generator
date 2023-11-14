@@ -225,7 +225,7 @@ final Map<String, String> customIconAssociation = {"codecov": "icons/codecov/cod
 "handlebars": "icons/handlebars/handlebars-original.svg",
 "wordpress": "icons/wordpress/wordpress-original.svg",
 "towergit": "icons/towergit/towergit-original.svg",
-"zig": "icons/zig/zig-original-wordmark.svg",
+"zig": "icons/zig/zig-original.svg",
 "raspberrypi": "icons/raspberrypi/raspberrypi-original-wordmark.svg",
 "packer": "icons/packer/packer-original.svg",
 "appcelerator": "icons/appcelerator/appcelerator-original.svg",

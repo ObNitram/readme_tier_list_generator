@@ -2,7 +2,7 @@ import "dart:io";
 import "package:flutter/material.dart";
 import "package:flutter/services.dart";
 import "package:log_tanker/log_tanker.dart";
-import "package:readme_tier_list_generator/UI/image_generator.dart";
+import "package:readme_tier_list_generator/app.dart";
 import "package:readme_tier_list_generator/data/model.dart";
 import "package:readme_tier_list_generator/data/parse_yaml.dart";
 
@@ -44,5 +44,5 @@ void main() async {
   TierList tierList = parseYaml(yamlConfig);
   QuickLog.i("TierList title : ${tierList.title}}");
 
-  runApp(ImageGenerator(tierList: tierList));
+  runApp(App(tierList: tierList));
 }
