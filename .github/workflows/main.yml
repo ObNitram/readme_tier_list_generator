@@ -21,12 +21,8 @@ jobs:
       run: |
         Xvfb :1 & export DISPLAY=:1; ./build/linux/x64/release/bundle/readme_tier_list_generator
 
-    - name: ls
-      run: ls *.png -l -h
-
     - name: Get git info
       run: git remote -v
-
 
     - name: Commit and Push
       run: |
@@ -35,13 +31,7 @@ jobs:
         git add .
         git commit -m "Automation create image"
         
-    # - name: Set up Git repository
-    #   run: |
-    #     git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/ObNitram/readme_tier_list_generator.git
-
-
     - name: Push 
       run: |
         git push
-      # env:
-      #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
