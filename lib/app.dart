@@ -27,7 +27,7 @@ class App extends StatelessWidget {
 
     if (true) {
       WidgetsBinding.instance.addPostFrameCallback((_) => Future.delayed(
-            const Duration(seconds: 1),
+            const Duration(seconds: 5),
             () => postFrameCallBack(context),
           ));
     }
